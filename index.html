@@ -1,29 +1,138 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-<meta charset="UTF-8">
-<title>Dispatch Control Panel</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Панель управления службой</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo-dot"></div>
+        <div>
+          <h2 class="logo-title">Оперативный центр</h2>
+          <p class="logo-subtitle">Служебная панель</p>
+        </div>
+      </div>
 
-<h1>Dispatch Control Panel</h1>
+      <nav class="menu">
+        <a class="menu-item active" href="#">Главная</a>
+        <a class="menu-item" href="#">Инциденты</a>
+        <a class="menu-item" href="#">Экипажи</a>
+        <a class="menu-item" href="#">Личный состав</a>
+        <a class="menu-item" href="#">Журнал событий</a>
+        <a class="menu-item" href="#">Аналитика</a>
+      </nav>
+    </aside>
 
-<div class="card">
-Активные инциденты: 3
-</div>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Служебная панель управления</h1>
+          <p class="subtitle">
+            Мониторинг инцидентов, экипажей и нагрузки смены
+          </p>
+        </div>
 
-<div class="card">
-Свободные экипажи: 5
-</div>
+        <div class="topbar-right">
+          <div class="shift-badge">Смена 20:00–08:00</div>
+          <div class="time-box" id="current-time">--:--:--</div>
+        </div>
+      </header>
 
-<div class="card">
-Экипажи на маршруте: 2
-</div>
+      <section class="stats">
+        <div class="card stat-card">
+          <p class="card-label">Активные тревоги</p>
+          <h3>3</h3>
+        </div>
 
-<script src="script.ts"></script>
+        <div class="card stat-card">
+          <p class="card-label">Свободные экипажи</p>
+          <h3>0</h3>
+        </div>
 
+        <div class="card stat-card">
+          <p class="card-label">На маршруте</p>
+          <h3>1</h3>
+        </div>
+
+        <div class="card stat-card">
+          <p class="card-label">Сотрудников на смене</p>
+          <h3>8</h3>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="card big-card">
+          <div class="section-header">
+            <h2>Активные инциденты</h2>
+            <button class="btn">Открыть журнал</button>
+          </div>
+
+          <div class="table">
+            <div class="table-row table-head">
+              <span>КУД</span>
+              <span>Объект</span>
+              <span>Адрес</span>
+              <span>Статус</span>
+            </div>
+
+            <div class="table-row">
+              <span>1024</span>
+              <span>Клуб «Гагарин»</span>
+              <span>просп. Испытателей, 37</span>
+              <span class="badge danger">Тревога</span>
+            </div>
+
+            <div class="table-row">
+              <span>1025</span>
+              <span>Контакт Бар</span>
+              <span>Коломяжский просп., 15, корп. 2</span>
+              <span class="badge success">На маршруте</span>
+            </div>
+
+            <div class="table-row">
+              <span>1026</span>
+              <span>Квартира</span>
+              <span>ул. Плесецкая, 2</span>
+              <span class="badge danger">Тревога</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card side-card">
+          <div class="section-header">
+            <h2>Последние события</h2>
+          </div>
+
+          <div class="event-list">
+            <div class="event-item">
+              <span class="event-time">20:00</span>
+              <p>Начало ночной смены. Заступили 4 экипажа</p>
+            </div>
+
+            <div class="event-item">
+              <span class="event-time">21:03</span>
+              <p>Получен сигнал по объекту «Клуб Гагарин»</p>
+            </div>
+
+            <div class="event-item">
+              <span class="event-time">21:05</span>
+              <p>Экипаж ГЗ-21 назначен на выезд</p>
+            </div>
+
+            <div class="event-item">
+              <span class="event-time">21:12</span>
+              <p>Экипаж ГЗ-21 прибыл на объект</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="script.ts"></script>
 </body>
 </html>
