@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Панель управления службой</title>
+  <title>Журнал событий — Панель управления службой</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,20 +18,20 @@
       </div>
 
       <nav class="menu">
-        <a class="menu-item active" href="index.html">Главная</a>
+        <a class="menu-item" href="index.html">Главная</a>
         <a class="menu-item" href="incidents.html">Инциденты</a>
         <a class="menu-item" href="units.html">Экипажи</a>
         <a class="menu-item" href="events.html">Журнал событий</a>
-        <a class="menu-item" href="analytics.html">Аналитика</a>
+        <a class="menu-item active" href="analytics.html">Аналитика</a>
       </nav>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <div>
-          <h1>Панель оперативного контроля</h1>
+          <h1>Журнал событий</h1>
           <p class="subtitle">
-            Текущая обстановка по сигналам, выездам и ночной смене
+            Хронология действий, сигналов и выездов за текущую смену
           </p>
         </div>
 
@@ -41,20 +41,27 @@
         </div>
       </header>
 
-      <section class="stats" id="stats"></section>
+      <section class="stats" id="analytics-stats"></section>
 
-      <section class="content-grid">
-        <div class="card big-card">
-          <div class="section-header">
-            <h2>Активные инциденты</h2>
-            <button class="btn" type="button" onclick="window.location.href='incidents.html'">
-              Открыть журнал
-            </button>
-          </div>
+<section class="content-grid">
 
-          <div class="table incidents-table" id="incidents-table"></div>
-        </div>
-      </section>
+  <div class="card">
+    <div class="section-header">
+      <h2>Сводка по инцидентам</h2>
+    </div>
+
+    <div id="incident-summary"></div>
+  </div>
+
+  <div class="card">
+    <div class="section-header">
+      <h2>Состояние экипажей</h2>
+    </div>
+
+    <div id="units-summary"></div>
+  </div>
+
+</section>
     </main>
   </div>
 

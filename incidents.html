@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Инциденты — Панель управления службой</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo-dot"></div>
+        <div>
+          <h2 class="logo-title">Оперативный центр</h2>
+          <p class="logo-subtitle">Служебная панель</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item" href="index.html">Главная</a>
+        <a class="menu-item active" href="incidents.html">Инциденты</a>
+        <a class="menu-item" href="units.html">Экипажи</a>
+        <a class="menu-item" href="events.html">Журнал событий</a>
+        <a class="menu-item" href="analytics.html">Аналитика</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Журнал инцидентов</h1>
+          <p class="subtitle">
+            Все активные сигналы, адреса и текущие статусы по смене
+          </p>
+        </div>
+
+        <div class="topbar-right">
+          <div class="shift-badge">Смена 20:00–08:00</div>
+          <div class="time-box" id="current-time">--:--:--</div>
+        </div>
+      </header>
+
+      <section class="content-grid">
+        <div class="card big-card">
+         <div class="section-header">
+  <h2>Активные инциденты</h2>
+  <button class="btn" type="button" id="open-incident-form">Новый сигнал</button>
+</div>
+<div class="incident-form hidden" id="incident-form">
+  <div class="incident-form-grid">
+    <input type="text" id="incident-id" placeholder="КУД" />
+    <input type="text" id="incident-object" placeholder="Объект" />
+    <input type="text" id="incident-address" placeholder="Адрес" />
+    <select id="incident-status">
+      <option value="Тревога">Тревога</option>
+      <option value="На маршруте">На маршруте</option>
+    </select>
+  </div>
+
+  <div class="incident-form-actions">
+    <button class="btn" type="button" id="add-incident-btn">Добавить</button>
+  </div>
+</div>
+         <div class="filters-row">
+  <button class="filter-btn active" type="button" data-filter="Все">
+    Все
+  </button>
+
+  <button class="filter-btn" type="button" data-filter="Тревога">
+    Тревога
+  </button>
+
+  <button class="filter-btn" type="button" data-filter="На маршруте">
+    На маршруте
+  </button>
+</div>
+
+          <div class="table incidents-table" id="incidents-table"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Панель управления службой</title>
+  <title>Журнал событий — Панель управления службой</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,10 +18,10 @@
       </div>
 
       <nav class="menu">
-        <a class="menu-item active" href="index.html">Главная</a>
+        <a class="menu-item" href="index.html">Главная</a>
         <a class="menu-item" href="incidents.html">Инциденты</a>
         <a class="menu-item" href="units.html">Экипажи</a>
-        <a class="menu-item" href="events.html">Журнал событий</a>
+        <a class="menu-item active" href="events.html">Журнал событий</a>
         <a class="menu-item" href="analytics.html">Аналитика</a>
       </nav>
     </aside>
@@ -29,9 +29,9 @@
     <main class="main">
       <header class="topbar">
         <div>
-          <h1>Панель оперативного контроля</h1>
+          <h1>Журнал событий</h1>
           <p class="subtitle">
-            Текущая обстановка по сигналам, выездам и ночной смене
+            Хронология действий, сигналов и выездов за текущую смену
           </p>
         </div>
 
@@ -41,20 +41,15 @@
         </div>
       </header>
 
-      <section class="stats" id="stats"></section>
+<section class="content-grid">
+  <div class="card big-card">
+    <div class="section-header">
+      <h2>Журнал событий</h2>
+    </div>
 
-      <section class="content-grid">
-        <div class="card big-card">
-          <div class="section-header">
-            <h2>Активные инциденты</h2>
-            <button class="btn" type="button" onclick="window.location.href='incidents.html'">
-              Открыть журнал
-            </button>
-          </div>
-
-          <div class="table incidents-table" id="incidents-table"></div>
-        </div>
-      </section>
+    <div class="events-list" id="events-list"></div>
+  </div>
+</section>
     </main>
   </div>
 
